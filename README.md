@@ -15,8 +15,8 @@ Containarized Go API for handling customer purrchase reciepts.
 The API is up and running. 
 ### Testing
 The program runs programmed test cases while building during setup. But you can manually test by using following:
-1. Execute in a seperate terminal in same folder `curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @extras/test1.json --request "POST"` (Will return an ID for test1.json ).
-2. Execute `curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @extras/test2.json --request "POST"` (Will return an ID for test2.json ).
+1. Execute in a seperate terminal in same folder `curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @test/test1.json --request "POST"` (Will return an ID for test1.json ).
+2. Execute `curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @test/test2.json --request "POST"` (Will return an ID for test2.json ).
 3. Execute `curl localhost:9000/receipts/__ID__/points` ( Replace `__ID__` by ID you recieved from either of the eariler POST request  ). Using ID for test1 should return 28 and ID for test2 should return 109.
 
 You can send any other POST and GET requests on `localhost:9000/receipts/process` and `localhost:9000/receipts/__ID__/points` respectively.
@@ -39,7 +39,7 @@ fetch-receipt-processor/
 │      ├─ route.go             - Assigns function to all route calls.
 │    ├─ utils                  - Contains logic for common used functions across the API
 │      ├─ id_generator.go      - Logic for generating unique ID.
-├─ test/                       - Contains unit tests for the application
+├─ test/                       - Contains test data
 │    ├─ ping_test.http         - Ping test to see if server is online
 │    ├─ test1.json             - Example of reciepts to test the API
 │    ├─ test2.json             - Another example of reciepts to test the API
