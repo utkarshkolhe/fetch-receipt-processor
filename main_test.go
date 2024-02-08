@@ -58,7 +58,7 @@ func TestJSON1(t *testing.T) {
 	r.POST("/post", handlers.GetID)
 	r.GET("/reciepts/:id/points", handlers.GetPoints)
 
-	file, err := os.Open("test1.json")
+	file, err := os.Open("test/test1.json")
 	if err != nil {
 		t.Fatal(err)
 		return
