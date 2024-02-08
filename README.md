@@ -21,7 +21,7 @@ The program runs programmed test cases while building during setup. But you can 
 
 You can send any other POST and GET requests on `localhost:9000/receipts/process` and `localhost:9000/receipts/__ID__/points` respectively.
 
-
+```
 fetch-receipt-processor/
 ├─ api/                        - Main source folder for the API
 |    ├─ db/                    - Contains logic for interactions with the database
@@ -49,7 +49,7 @@ fetch-receipt-processor/
 ├─ main.go                     - Entry point for the API Application
 ├─ main_test.go                - Automated API Testing
 ├─ README.md                   - Documentation and general information about the project
-
+```
 
 ## Summary of API Specification
 
