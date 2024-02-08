@@ -4,5 +4,6 @@ docker run -e PORT=9000 -p 9000:8080 go-containerized:latest
 
 
 // Testing
-curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @test.json --request "POST"
+curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @test1.json --request "POST"
+curl localhost:9000/receipts/process --include --header "Content-Type: application/json" -d @test2.json --request "POST"
 curl localhost:9000/receipts/__ID__/points

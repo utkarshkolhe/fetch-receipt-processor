@@ -4,6 +4,7 @@ WORKDIR /app
 COPY go.mod .
 COPY main.go .
 COPY main_test.go .
+COPY test1.json .
 COPY api ./api
 RUN go get
 RUN go mod tidy
