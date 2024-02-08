@@ -22,6 +22,33 @@ The program runs programmed test cases while building during setup. But you can 
 You can send any other POST and GET requests on `localhost:9000/receipts/process` and `localhost:9000/receipts/__ID__/points` respectively.
 
 
+fetch-receipt-processor/
+├─ api/                        - Main source folder for the API
+|    ├─ db/                    - Contains logic for interactions with the database
+|      ├─ reciept_manager.go   - Manages stoarage and retrival of Reciepts in the Database
+|    ├─ handelers/             - Contains logic for all the handlers for the API endpoints
+|      ├─ get_points.go        - Handles Endpoint: Get Points
+|      ├─ process_receipts.go  - Handles Endpoint: Process Receipts
+|      ├─ ping.go              - Handles Endpoint: Ping, used to check if server is online
+|    ├─ models/                - Contains Definition for different Model Structures required by the API
+│      ├─ id_model.go          - Structure for IDModel. used to send ID
+│      ├─ points_model.go      - Structure for PoointsModel, Used to send the points of Reciept
+│      ├─ reciept_model.go     - Structure for Items and Reciepts used to recieve Reciepts data.
+│    ├─ routes                 - Contains logic for assigning web routes to API
+│      ├─ route.go             - Assigns function to all route calls.
+│    ├─ utils                  - Contains logic for common used functions across the API
+│      ├─ id_generator.go      - Logic for generating unique ID.
+├─ test/                       - Contains unit tests for the application
+│    ├─ ping_test.http         - Ping test to see if server is online
+│    ├─ test1.json             - Example of reciepts to test the API
+│    ├─ test2.json             - Another example of reciepts to test the API
+├─ .gitattributes              - Attributes Specification for git
+├─ dockerfile                  - Instructions to create docker container
+├─ go.mod                      - Dependency Management for the Go Codebase
+├─ go.sum                      - Checksum for Go. To avoid reinsatlling dependencies
+├─ main.go                     - Entry point for the API Application
+├─ main_test.go                - Automated API Testing
+├─ README.md                   - Documentation and general information about the project
 
 
 ## Summary of API Specification
@@ -158,23 +185,4 @@ Breakdown:
 ```
 
 ---
-
-# FAQ
-
-### How will this exercise be evaluated?
-An engineer will review the code you submit. At a minimum they must be able to run the service and the service must provide the expected results. You
-should provide any necessary documentation within the repository. While your solution does not need to be fully production ready, you are being evaluated so
-put your best foot forward.
-
-### I have questions about the problem statement
-For any requirements not specified via an example, use your best judgment to determine the expected result.
-
-### Can I provide a private repository?
-If at all possible, we prefer a public repository because we do not know which engineer will be evaluating your submission. Providing a public repository
-ensures a speedy review of your submission. If you are still uncomfortable providing a public repository, you can work with your recruiter to provide access to
-the reviewing engineer.
-
-### How long do I have to complete the exercise?
-There is no time limit for the exercise. Out of respect for your time, we designed this exercise with the intent that it should take you a few hours. But, please
-take as much time as you need to complete the work.
 
