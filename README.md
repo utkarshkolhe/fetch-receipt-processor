@@ -21,6 +21,7 @@ The program runs programmed test cases while building during setup. But you can 
 
 You can send any other POST and GET requests on `localhost:9000/receipts/process` and `localhost:9000/receipts/__ID__/points` respectively.
 
+### File Structure
 ```
 fetch-receipt-processor/
 ├─ api/                        - Main source folder for the API
