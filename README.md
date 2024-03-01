@@ -1,5 +1,5 @@
 # Fetch Receipt Processor
-Containarized Go API for handling customer purrchase reciepts.
+Containarized Go API for handling customer purchase reciepts.
 ## Installation
 
 ### Requirements
